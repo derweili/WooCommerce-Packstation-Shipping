@@ -1,21 +1,23 @@
-(function($) {
+//(function(jQuery) {
 	
-	// $ Works! You can test it with next line if you like
-	// console.log($);
+	// jQuery Works! You can test it with next line if you like
+	// console.log(jQuery);
 
-    var sendToPackstationCheckbox = $('#send_to_packstation'),
+    var sendToPackstationCheckbox = jQuery('#send_to_packstation'),
         sendToPackstation = false,
-        packstationCustomerNumberWrapper = $('#packstation_customer_number_field'),
-        packstationCustomerNumber = $('#packstation_customer_number'),
-        packstationNumberWrapper = $('#packstation_packstation_number_field');
-        packstationNumber = $('#packstation_packstation_number'),
+        packstationCustomerNumberWrapper = jQuery('#packstation_customer_number_field'),
+        packstationCustomerNumber = jQuery('#packstation_customer_number'),
+        packstationNumberWrapper = jQuery('#packstation_packstation_number_field');
+        packstationNumber = jQuery('#packstation_packstation_number'),
+        
+        packstationFinderWrapper = jQuery('#packstation_finder_placeholder_field'),
         
         
-        shippingAddress1FieldWrapper = $('#shipping_address_1_field'),
-        shippingAddress1Field = $('#shipping_address_1'),
+        shippingAddress1FieldWrapper = jQuery('#shipping_address_1_field'),
+        shippingAddress1Field = jQuery('#shipping_address_1'),
         
-        shippingAddress2FieldWrapper = $('#shipping_address_2_field'),
-        shippingAddress2Field = $('#shipping_address_2');
+        shippingAddress2FieldWrapper = jQuery('#shipping_address_2_field'),
+        shippingAddress2Field = jQuery('#shipping_address_2');
 
     /*
      * function to check if packstation checkbox is checked
@@ -23,7 +25,7 @@
      */
     var sendToPackstationCheck = function() {
         
-        if ($(sendToPackstationCheckbox).is(':checked')) {
+        if (jQuery(sendToPackstationCheckbox).is(':checked')) {
             sendToPackstation = true
             showPackstationFields();
             packstationClearAddressFields();
@@ -39,58 +41,65 @@
     }
 
     var showPackstationFields = function() {
-        $(packstationCustomerNumberWrapper).removeClass('packstation-hidden');
-        $(packstationNumberWrapper).removeClass('packstation-hidden');
-        $(packstationCustomerNumberWrapper).addClass('validate-required');
-        $(packstationNumberWrapper).addClass('validate-required');
+        jQuery(packstationCustomerNumberWrapper).removeClass('packstation-hidden');
+        jQuery(packstationNumberWrapper).removeClass('packstation-hidden');
+        jQuery(packstationFinderWrapper).removeClass('packstation-hidden');
+        jQuery(packstationCustomerNumberWrapper).addClass('validate-required');
+        jQuery(packstationNumberWrapper).addClass('validate-required');
         
-        $(shippingAddress1FieldWrapper).addClass('packstation-hidden');
-        $(shippingAddress2FieldWrapper).addClass('packstation-hidden');
+        jQuery(shippingAddress1FieldWrapper).addClass('packstation-hidden');
+        jQuery(shippingAddress2FieldWrapper).addClass('packstation-hidden');
     };
 
 
     var hidePackstationFields = function() {
-        $(packstationCustomerNumberWrapper).addClass('packstation-hidden');
-        $(packstationNumberWrapper).addClass('packstation-hidden');
-        $(packstationCustomerNumberWrapper).removeClass('validate-required');
-        $(packstationNumberWrapper).removeClass('validate-required');
+        jQuery(packstationCustomerNumberWrapper).addClass('packstation-hidden');
+        jQuery(packstationNumberWrapper).addClass('packstation-hidden');
+        jQuery(packstationFinderWrapper).addClass('packstation-hidden');
+        jQuery(packstationCustomerNumberWrapper).removeClass('validate-required');
+        jQuery(packstationNumberWrapper).removeClass('validate-required');
 
-        $(shippingAddress1FieldWrapper).removeClass('packstation-hidden');
-        $(shippingAddress2FieldWrapper).removeClass('packstation-hidden');
+        jQuery(shippingAddress1FieldWrapper).removeClass('packstation-hidden');
+        jQuery(shippingAddress2FieldWrapper).removeClass('packstation-hidden');
     };
 
 
     var syncPackstationFields = function(){
 
-        var packstationCustomerNumberValue = $(packstationCustomerNumber).val();
+        var packstationCustomerNumberValue = jQuery(packstationCustomerNumber).val();
         if( packstationCustomerNumberValue ) {
-            $(shippingAddress1Field).val( packstationCustomerNumberValue );
+            jQuery(shippingAddress1Field).val( packstationCustomerNumberValue );
         }else{
-            $(shippingAddress1Field).val( '' );
+            jQuery(shippingAddress1Field).val( '' );
         }
-        var packstationNumberValue = $(packstationNumber).val();
+        var packstationNumberValue = jQuery(packstationNumber).val();
         if( packstationNumberValue ) {
-            $(shippingAddress2Field).val( 'Packstation ' + packstationNumberValue );
+            jQuery(shippingAddress2Field).val( 'Packstation ' + packstationNumberValue );
         }else{
-            $(shippingAddress2Field).val( '' );
+            jQuery(shippingAddress2Field).val( '' );
         }
 
     }
 
     var packstationClearAddressFields = function() {
-        $(shippingAddress1Field).val( '' );
-        $(shippingAddress2Field).val( '' );
+        jQuery(shippingAddress1Field).val( '' );
+        jQuery(shippingAddress2Field).val( '' );
     }
 
 
     sendToPackstationCheck();
 
     // checkbox status change
-    $(sendToPackstationCheckbox).change(sendToPackstationCheck);
+    jQuery(sendToPackstationCheckbox).change(sendToPackstationCheck);
 
     // number changes
-    $(packstationCustomerNumber).change(syncPackstationFields);
-    $(packstationNumber).change(syncPackstationFields);
+    jQuery(packstationCustomerNumber).change(syncPackstationFields);
+    jQuery(packstationNumber).change(syncPackstationFields);
+
+
+
+
+
 
 	
-})( jQuery );
+//})( jQuery );

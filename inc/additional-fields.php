@@ -11,12 +11,23 @@ function packstation_add_fields( $fields ) {
      */
     $send_to_packstation_element = array(
         'type' => 'checkbox',
-        'class' => array('number'),
+        'class' => array(''),
         'label' => __('An Packstation senden', 'packstation'),
         //'placeholder' => _x('Notes about your order, e.g. special notes for delivery.', 'placeholder', 'woocommerce')
     );
 
-    $fields['shipping'] = add_array_element_before_index($fields['shipping'], $send_to_packstation_element, 'send_to_packstation', 3 );
+    $fields['shipping'] = add_array_element_before_index($fields['shipping'], $send_to_packstation_element, 'send_to_packstation', 4 );
+
+    // Add customer number
+    $packstation_finder_placeholder = array(
+        'type' => 'text',
+        'class' => array('packstation-hidden' ),
+        'label' => __('<a id="packstation-finder"><i class="fa fa-location-arrow" aria-hidden="true"></i> Packstation finden</a>', 'packstation'),
+        //'required' => true
+        //'placeholder' => _x('Notes about your order, e.g. special notes for delivery.', 'placeholder', 'woocommerce')
+    );
+    $fields['shipping'] = add_array_element_before_index($fields['shipping'], $packstation_finder_placeholder, 'packstation_finder_placeholder', 5 );
+
 
     // Add customer number
     $packstation_customer_number = array(
@@ -26,7 +37,7 @@ function packstation_add_fields( $fields ) {
         //'required' => true
         //'placeholder' => _x('Notes about your order, e.g. special notes for delivery.', 'placeholder', 'woocommerce')
     );
-    $fields['shipping'] = add_array_element_before_index($fields['shipping'], $packstation_customer_number, 'packstation_customer_number', 4 );
+    $fields['shipping'] = add_array_element_before_index($fields['shipping'], $packstation_customer_number, 'packstation_customer_number', 6 );
 
     // Add customer number
     $packstation_packstation_number = array(
@@ -37,7 +48,7 @@ function packstation_add_fields( $fields ) {
         'clear' => true,
         //'placeholder' => _x('Notes about your order, e.g. special notes for delivery.', 'placeholder', 'woocommerce')
     );
-    $fields['shipping'] = add_array_element_before_index($fields['shipping'], $packstation_packstation_number, 'packstation_packstation_number', 5 );
+    $fields['shipping'] = add_array_element_before_index($fields['shipping'], $packstation_packstation_number, 'packstation_packstation_number', 7 );
 
 
 

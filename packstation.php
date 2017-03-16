@@ -42,6 +42,9 @@ class Packstation_Plugin
 	private function load_other_dependencies(){
 
 		include "inc/additional-fields.php";
+		include "inc/popup.php";
+		include "inc/packstation-finder.php";
+		//include "inc/additional-fields.php";
 
 	}
 
@@ -55,7 +58,9 @@ class Packstation_Plugin
 		add_action( 'wp_enqueue_scripts', function(){
     		//wp_register_script('packstation-conditional-fields', plugins_url('assets/js/conditional-fields.js', __FILE__), array('jquery'));
             wp_enqueue_script( 'packstation-conditional-fields', plugins_url('assets/js/conditional-fields.js', __FILE__), array('jquery'), '1.0.0', true );
-            wp_enqueue_style( 'packstation-style', plugins_url('assets/css/packstation.css', __FILE__), array(), '1.0.0', 'all' );
+            wp_enqueue_script( 'popup', plugins_url('assets/js/popup.js', __FILE__), array('jquery'), '1.0.0', true );
+            
+			wp_enqueue_style( 'packstation-style', plugins_url('assets/css/packstation.css', __FILE__), array(), '1.0.0', 'all' );
 		} );
 
 	}

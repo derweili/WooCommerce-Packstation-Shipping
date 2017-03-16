@@ -1,0 +1,24 @@
+{
+  "name": "woocommerce-packstation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "packstation.php",
+  "scripts": {
+    "test": "default",
+    "watch": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derweili/WooCommerce-Packstation-Shipping.git"
+  },
+  "author": "derweili",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derweili/WooCommerce-Packstation-Shipping/issues"
+  },
+  "homepage": "https://github.com/derweili/WooCommerce-Packstation-Shipping#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
