@@ -10,6 +10,9 @@
         packstationNumberWrapper = jQuery('#packstation_packstation_number_field');
         packstationNumber = jQuery('#packstation_packstation_number'),
         
+        shippingZip = jQuery('#shipping_postcode'),
+        shippingCity = jQuery('#shipping_city'),
+        
         packstationFinderWrapper = jQuery('#packstation_finder_placeholder_field'),
         
         

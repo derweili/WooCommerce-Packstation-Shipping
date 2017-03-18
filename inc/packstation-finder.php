@@ -32,11 +32,12 @@ function derweili_packstation_finder_ajax() {
     foreach ($packstations as $key => $value) {
         $code .= '<div class="result">
                 <div>
+                    <strong>' . $value->address->remark . '</strong><br>
                     <strong>' . $value->address->street . ' ' . $value->address->streetNo . ', ' . $value->address->zip . ' ' . $value->address->city . '</strong><br>
                     <i>Packstation ' . $value->packstationId . '</i>
                 </div>
                 <div>
-                    <a data-packstationnumber="' . $value->packstationId . '" class="set-packstation-button button">Packstation wählen</a>
+                    <a data-packstationnumber="' . $value->packstationId . '" data-zip="' . $value->address->zip. '" data-city="' . $value->address->city. '" class="set-packstation-button button">Packstation wählen</a>
                 </div>
             </div>';
     }

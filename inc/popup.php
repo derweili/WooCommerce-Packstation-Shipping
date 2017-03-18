@@ -8,10 +8,10 @@ function derweili_packstation_popup(){
         <h2>Packstation finden</h2>
         <form id="packstation-finder-address">
             <label for="packstation-finder-address-input">
-                Adresse eingeben
+                Postleitzahl eingeben
              </label>
             <input type="text" id="packstation-finder-address-input" />
-           
+            <button type = "submit">Suchen</button>
         </form>
         <div class="results" id="packstation-finder-results">
             
