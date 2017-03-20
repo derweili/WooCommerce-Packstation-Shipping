@@ -62,6 +62,7 @@
         //remove requirements
         jQuery(packstationCustomerNumberWrapper).removeClass('validate-required');
         jQuery(packstationNumberWrapper).removeClass('validate-required');
+        
     };
 
 
