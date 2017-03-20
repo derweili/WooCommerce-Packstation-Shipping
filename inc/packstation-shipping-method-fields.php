@@ -1,7 +1,5 @@
 <?php
 
-//add_filter('woocommerce_shipping_instance_form_fields_');
-//add_filter('woocommerce_shipping_instance_form_fields_free_shipping', 'packstation_shipping_method_form_fields', 10, 1);
 
 function packstation_shipping_method_form_fields($defaults){
     /*echo "defaults";
@@ -31,20 +29,7 @@ function packstation_admin_init_test() {
        add_filter('woocommerce_shipping_instance_form_fields_' . $id, 'packstation_shipping_method_form_fields', 10, 1);
     }
 
-    
-    /*if( isset( $_GET["shippinclassestest"]) && 1 == $_GET["shippinclassestest"] ){
-        $active_methods   = array();
-        echo '<pre>';
-        var_dump($shipping_methods);
-        echo '</pre>';
-    }*/
-/*    foreach ( $shipping_methods as $id => $shipping_method ) {
-      if ( isset( $shipping_method->enabled ) && 'yes' === $shipping_method->enabled ) {
-        $active_methods[ $id ] = array( 'title' => $shipping_method->title, 'tax_status' => $shipping_method->tax_status );
-      }
-    }
-
-    var_dump($active_methods);*/
+ 
 }
 
 

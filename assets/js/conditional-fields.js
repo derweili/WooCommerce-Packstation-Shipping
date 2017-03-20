@@ -31,12 +31,18 @@
             sendToPackstation = true
             showPackstationFields();
             packstationClearAddressFields();
+            
+            jQuery(shippingAddress1Field).val( 'Pack station ' );
 
 
         }else{
             sendToPackstation = false;
             hidePackstationFields();
+            jQuery(shippingAddress1Field).val( '' );
         }
+        
+        // update checkout / shipping methods
+        jQuery( 'body' ).trigger( 'update_checkout' );
         console.log('send to packstation check : ' + sendToPackstation);
 
 
