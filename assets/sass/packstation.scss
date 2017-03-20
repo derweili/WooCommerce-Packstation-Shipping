@@ -17,6 +17,11 @@
 /*
  * Popup style
  */
+#packstation-finder-address{
+    display: flex;
+    align-item: center;
+
+}
 
 #derweili-packstation-popup-bg{
     display: none;
@@ -56,6 +61,14 @@
 
 #derweili-packstation-popup{
 
+    .results{
+        max-height: 300px;
+        overflow-y: scroll;
+        &:not(:empty){
+            border: 1px solid grey;
+            padding: 10px;
+        }
+    }
 
     .result{
         display: flex;
@@ -89,4 +102,19 @@
 @keyframes loaderrotate {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
+}
+
+
+
+.packstation-label{
+    display: inline-block;
+    height: 0.8em;
+    width: 7.1em;
+    max-width: 100%;
+    background-image: url('../img/packstation-logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    > span{
+        display: none;
+    }
 }

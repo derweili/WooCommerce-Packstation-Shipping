@@ -1,6 +1,7 @@
 <?php
 
 add_action( 'wp_ajax_packstation_finder', 'derweili_packstation_finder_ajax' );
+add_action( 'wp_ajax_nopriv_packstation_finder', 'derweili_packstation_finder_ajax' );
 
 function derweili_packstation_finder_ajax() {
 	global $wpdb; // this is how you get access to the database

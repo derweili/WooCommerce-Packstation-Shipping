@@ -10,6 +10,10 @@
 /*
  * Popup style
  */
+#packstation-finder-address {
+  display: flex;
+  align-item: center; }
+
 #derweili-packstation-popup-bg {
   display: none;
   background: rgba(0, 0, 0, 0.8);
@@ -41,6 +45,13 @@
 #derweili-packstation-popup.visible, #derweili-packstation-popup-bg.visible {
   display: block; }
 
+#derweili-packstation-popup .results {
+  max-height: 300px;
+  overflow-y: scroll; }
+  #derweili-packstation-popup .results:not(:empty) {
+    border: 1px solid grey;
+    padding: 10px; }
+
 #derweili-packstation-popup .result {
   display: flex;
   justify-content: space-between;
@@ -68,3 +79,14 @@
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
+
+.packstation-label {
+  display: inline-block;
+  height: 0.8em;
+  width: 7.1em;
+  max-width: 100%;
+  background-image: url("../img/packstation-logo.png");
+  background-repeat: no-repeat;
+  background-size: contain; }
+  .packstation-label > span {
+    display: none; }

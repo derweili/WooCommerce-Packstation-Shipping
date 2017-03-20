@@ -11,12 +11,9 @@ function derweili_packstation_popup(){
                 Postleitzahl eingeben
              </label>
             <input type="text" id="packstation-finder-address-input" />
-            <button type = "submit">Suchen</button>
+            <input type = "submit" value="Suchen"></input>
         </form>
-        <div class="results" id="packstation-finder-results">
-            
-
-        </div>
+        <div class="results" id="packstation-finder-results"></div>
     </div>
 
     <?php

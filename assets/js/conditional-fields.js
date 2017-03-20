@@ -7,19 +7,18 @@
         sendToPackstation = false,
         packstationCustomerNumberWrapper = jQuery('#packstation_customer_number_field'),
         packstationCustomerNumber = jQuery('#packstation_customer_number'),
-        packstationNumberWrapper = jQuery('#packstation_packstation_number_field');
+        packstationNumberWrapper = jQuery('#packstation_packstation_number_field'),
         packstationNumber = jQuery('#packstation_packstation_number'),
         
+        packstationPackstationFieldWrappers = jQuery('#packstation_customer_number_field, #packstation_packstation_number_field, #packstation_finder_placeholder_field'),
+        packstationStandardAddressFieldWrappers = jQuery('#shipping_company_field, #shipping_address_1_field, #shipping_address_2_field' ),
+
         shippingZip = jQuery('#shipping_postcode'),
-        shippingCity = jQuery('#shipping_city'),
+        shippingCity = jQuery('#shipping_city'),        
+        shippingCompany = jQuery('#shipping_company'),        
         
-        packstationFinderWrapper = jQuery('#packstation_finder_placeholder_field'),
-        
-        
-        shippingAddress1FieldWrapper = jQuery('#shipping_address_1_field'),
         shippingAddress1Field = jQuery('#shipping_address_1'),
         
-        shippingAddress2FieldWrapper = jQuery('#shipping_address_2_field'),
         shippingAddress2Field = jQuery('#shipping_address_2');
 
     /*
@@ -44,49 +43,52 @@
     }
 
     var showPackstationFields = function() {
-        jQuery(packstationCustomerNumberWrapper).removeClass('packstation-hidden');
-        jQuery(packstationNumberWrapper).removeClass('packstation-hidden');
-        jQuery(packstationFinderWrapper).removeClass('packstation-hidden');
+        // hide/show fields
+        jQuery(packstationPackstationFieldWrappers).removeClass('packstation-hidden');
+        jQuery(packstationStandardAddressFieldWrappers).addClass('packstation-hidden');
+
+        // add requirements
         jQuery(packstationCustomerNumberWrapper).addClass('validate-required');
         jQuery(packstationNumberWrapper).addClass('validate-required');
         
-        jQuery(shippingAddress1FieldWrapper).addClass('packstation-hidden');
-        jQuery(shippingAddress2FieldWrapper).addClass('packstation-hidden');
     };
 
 
     var hidePackstationFields = function() {
-        jQuery(packstationCustomerNumberWrapper).addClass('packstation-hidden');
-        jQuery(packstationNumberWrapper).addClass('packstation-hidden');
-        jQuery(packstationFinderWrapper).addClass('packstation-hidden');
+        // hide/show fields
+        jQuery(packstationPackstationFieldWrappers).addClass('packstation-hidden');
+        jQuery(packstationStandardAddressFieldWrappers).removeClass('packstation-hidden');
+
+        //remove requirements
         jQuery(packstationCustomerNumberWrapper).removeClass('validate-required');
         jQuery(packstationNumberWrapper).removeClass('validate-required');
-
-        jQuery(shippingAddress1FieldWrapper).removeClass('packstation-hidden');
-        jQuery(shippingAddress2FieldWrapper).removeClass('packstation-hidden');
     };
 
 
+    /*
+     * Function to copy packstation fields content to standard address fields
+     */
     var syncPackstationFields = function(){
 
         var packstationCustomerNumberValue = jQuery(packstationCustomerNumber).val();
+
         if( packstationCustomerNumberValue ) {
-            jQuery(shippingAddress1Field).val( packstationCustomerNumberValue );
+            jQuery(shippingCompany).val( packstationCustomerNumberValue );
         }else{
-            jQuery(shippingAddress1Field).val( '' );
+            jQuery(shippingCompany).val( '' );
         }
         var packstationNumberValue = jQuery(packstationNumber).val();
         if( packstationNumberValue ) {
-            jQuery(shippingAddress2Field).val( 'Packstation ' + packstationNumberValue );
+            jQuery(shippingAddress1Field).val( 'Pack station ' + packstationNumberValue );
         }else{
-            jQuery(shippingAddress2Field).val( '' );
+            jQuery(shippingAddress1Field).val( '' );
         }
 
     }
 
     var packstationClearAddressFields = function() {
         jQuery(shippingAddress1Field).val( '' );
-        jQuery(shippingAddress2Field).val( '' );
+        jQuery(shippingCompany).val( '' );
     }
 
 
