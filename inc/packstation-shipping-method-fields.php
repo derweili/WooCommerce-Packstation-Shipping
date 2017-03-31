@@ -37,7 +37,11 @@ function derweili_packstation_hide_shipping_if_for_packstation_if_not_available_
 	$free = array();
 
     //var_dump($_POST);
-    $shippingAddress = $_POST["s_address"];
+   // $shippingAddress = $_POST["s_address"];
+    $shippingAddress = '';
+    
+    if( isset( $_POST["s_address"] ) ) $shippingAddress = $_POST["s_address"];
+
     if( strpos($shippingAddress, 'Pack station') !== false || strpos($shippingAddress, 'Packstation') !== false ){
         
         foreach ( $rates as $rate_id => $rate ) {

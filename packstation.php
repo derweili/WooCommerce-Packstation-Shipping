@@ -3,7 +3,7 @@
 /*
 Plugin Name: Packstation
 Description: DHL Packstation Support for WooCommerce
-Version: 1.3
+Version: 1.4
 Author: derweili
 Text Domain: packstation
 Domain Path: /languages/
@@ -47,6 +47,7 @@ class Packstation_Plugin
 		include "inc/packstation-product-field.php";
 		include "inc/packstation-shipping-method-fields.php";
 		include "inc/packstation-availability-check.php";
+		include "inc/packstation-payment-method-admin.php";
 		//include "inc/additional-fields.php";
 
 	}
