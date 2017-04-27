@@ -1,6 +1,6 @@
 (function(jQuery) {
 
-    var shipToDifferentAddressLabel = jQuery('#ship-to-different-address label');
+    var shipToDifferentAddressLabel = jQuery('#ship-to-different-address label span');
 
     var data = {
         'action': 'packstation_availability_check',

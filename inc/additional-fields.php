@@ -31,7 +31,7 @@ function packstation_add_fields( $fields ) {
      */
     $send_to_packstation_element = array(
         'type' => 'checkbox',
-        'class' => array(''),
+        'class' => array('form-row-wide'),
         'label' => __('An <i class="packstation-label"><span>Packstation</span></i> senden ', 'packstation'),
         //'placeholder' => _x('Notes about your order, e.g. special notes for delivery.', 'placeholder', 'woocommerce')
     );
